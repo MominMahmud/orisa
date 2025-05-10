@@ -1,0 +1,114 @@
+.snapContainerY {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
+  -webkit-overflow-scrolling: touch; /* For iOS smooth scrolling */
+  
+  /* Prevent overscroll bounce effect on some browsers */
+  overscroll-behavior-y: none;
+}
+
+.snapContainerY::-webkit-scrollbar {
+  display: none;
+}
+
+.snapSectionY {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.snapContainerX {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  display: flex;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
+  -webkit-overflow-scrolling: touch; /* For iOS smooth scrolling */
+  
+  /* Prevent overscroll bounce effect on some browsers */
+  overscroll-behavior-x: none;
+}
+
+.snapContainerX::-webkit-scrollbar {
+  display: none;
+}
+
+.snapSectionX {
+  min-width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Navigation dots styling for vertical layout */
+.navDotsY {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+/* Navigation dots styling for horizontal layout */
+.navDotsX {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  z-index: 10;
+}
+
+.navDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  outline: none;
+}
+
+.navDot.active {
+  background-color: white;
+  border-color: black;
+  transform: scale(1.2);
+}
+
+@media (hover: hover) {
+  .navDot:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+  }
+}
+
+.snapSectionX > *, .snapSectionY > * {
+  flex: 1;
+  overflow: hidden;
+}
+
+.snapContainerY, .snapContainerX {
+  transition: scroll-padding 0.2s ease;
+}

@@ -1,0 +1,20 @@
+.snapContainer {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: auto; // disables smooth scroll for instant snap
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.snapContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.snapSection {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}

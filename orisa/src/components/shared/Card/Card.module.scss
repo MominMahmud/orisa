@@ -1,0 +1,101 @@
+// PropertyCards.module.scss
+.cardsContainer {
+  padding: 2rem 0;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.headerContainer {
+  margin-bottom: 2rem;
+}
+
+.sectionLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  margin-top: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  
+  color: white;
+}
+
+.cardsWrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  height: 400px;
+}
+
+.card {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  
+  // Dark overlay for text visibility
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 10) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 1;
+  }
+  
+  &.expanded {
+    flex: 1.5; // Expand width on hover
+  }
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  
+  .card:hover & {
+    box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px); // Slide up animation on hover
+  }
+}
+
+.cardTitle {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .cardsWrapper {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .card {
+    height: 200px;
+    margin-bottom: 1rem;
+    
+    &.expanded {
+      flex: 1;
+    }
+  }
+}

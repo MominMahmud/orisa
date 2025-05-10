@@ -1,0 +1,36 @@
+.typewriterWrapper {
+  display: inline;
+}
+
+.typewriterText {
+  display: inline;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 2;
+  letter-spacing: 0.02em;
+  color: white;
+  position: relative;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.15em;
+  height: 1.5em;
+  background-color: burlywood;
+  margin-left: 2px;
+  margin-bottom: 0.2em;
+  animation: blink-caret 0.8s step-end infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink-caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,62 @@
+.gradientBgContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #000 0%, #2C3930 50%, #3F4F44 100%);
+}
+
+.gradientsContainer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  filter: blur(100px);
+}
+
+.pitchBlack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(180deg, #000 0%, transparent 100%);
+  z-index: 1;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.gradient {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  border-radius: 50%;
+  opacity: 0.25; // Lowered for subtlety
+  mix-blend-mode: hard-light;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.first {
+  background: radial-gradient(circle at center, #A27B5C 0, #A27B5C 50%);
+}
+.second {
+  background: radial-gradient(circle at center, rgba(220, 215, 201, 0.3) 0, rgba(220, 215, 201, 0) 50%);
+}
+.third {
+  background: radial-gradient(circle at center, rgba(44, 57, 48, 0.2) 0, rgba(44, 57, 48, 0) 50%);
+}
+.fourth {
+  background: radial-gradient(circle at center, rgba(63, 79, 68, 0.2) 0, rgba(63, 79, 68, 0) 50%);
+}
+.fifth {
+  background: radial-gradient(circle at center, rgba(162, 123, 92, 0.2) 0, rgba(162, 123, 92, 0) 50%);
+}
+.pointer {
+  background: radial-gradient(circle at center, rgba(220, 215, 201, 0.15) 0, rgba(220, 215, 201, 0) 50%);
+  opacity: 0.1;
+  z-index: 3;
+}
