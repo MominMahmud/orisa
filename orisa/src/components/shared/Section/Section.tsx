@@ -4,7 +4,6 @@ import Typewriter from "../TypeWriter/TypeWriter";
 
 type SectionProps = {
   heading: string;
-  subheading?: string;
   children?: React.ReactNode;
   image1: string;
   image2?: string;
@@ -15,7 +14,6 @@ type SectionProps = {
 
 const Section: React.FC<SectionProps> = ({
   heading,
-  subheading,
   children,
   image1,
   image2,
@@ -44,7 +42,6 @@ const Section: React.FC<SectionProps> = ({
   const textBlock = (
     <div className={styles.textBlock}>
       <Typewriter text={heading} />
-      {subheading && <p className={styles.subheading}>{subheading}</p>}
       {children && <div className={styles.content}>{children}</div>}
     </div>
   );
