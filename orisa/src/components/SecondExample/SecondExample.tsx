@@ -3,8 +3,8 @@ import Section from "../shared/Section/Section";
 import BackgroundGradient from "../BackgroundGradient/BackgroundGradient";
 
 const images = [
-  "../../../public/img3.png",
-  "../../../public/img4.png"
+  "/img3.png",
+  "/img4.png"
 ];
 
 const SecondExample = () => {
