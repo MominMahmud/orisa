@@ -44,6 +44,7 @@ const Section: React.FC<SectionProps> = ({
   const textBlock = (
     <div className={styles.textBlock}>
       <Typewriter text={heading} />
+      {subheading && <p className={styles.subheading}>{subheading}</p>}
       {children && <div className={styles.content}>{children}</div>}
     </div>
   );

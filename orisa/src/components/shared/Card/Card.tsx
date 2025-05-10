@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './Card.module.scss';
 
 const Card = ({ title, subtitle, cards }: { title: string, subtitle: string, cards: any[] }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
   return (
     <div className={styles.cardsContainer}>
