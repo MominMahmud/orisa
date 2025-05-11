@@ -48,7 +48,6 @@ const SnapScrollContainer: React.FC<SnapScrollContainerProps> = ({
   children,
   direction = "y",
   scrollDelay = 1000,
-  showNavDots = true
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isScrolling, setIsScrolling] = useState(false);
@@ -74,7 +73,7 @@ const SnapScrollContainer: React.FC<SnapScrollContainerProps> = ({
   const scrollToSection = (section: number, behavior: ScrollBehavior = "smooth") => {
     if (!containerRef.current) return;
     
-    const size = getSectionSize(direction, containerRef);
+    const size = getSectionSize(direction, containerRef as React.RefObject<HTMLDivElement>);
     const targetScroll = section * size;
     
     if (direction === "y") {
@@ -123,7 +122,7 @@ const SnapScrollContainer: React.FC<SnapScrollContainerProps> = ({
       
       // Set a timer to debounce scroll events
       scrollTimer = window.setTimeout(() => {
-        const size = getSectionSize(direction, containerRef);
+        const size = getSectionSize(direction, containerRef as React.RefObject<HTMLDivElement>);
         const scroll = direction === "y" ? container.scrollTop : container.scrollLeft;
         const newSection = Math.round(scroll / size);
         
