@@ -1,10 +1,15 @@
 .gradientBgContainer {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100vw;
   height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
-  // Inverse the gradient direction and color stops
   background: linear-gradient(0deg, #000 0%, #2C3930 50%, #3F4F44 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 .gradientsContainer {
@@ -60,4 +65,12 @@
   background: radial-gradient(circle at center, rgba(220, 215, 201, 0.15) 0, rgba(220, 215, 201, 0) 50%);
   opacity: 0.1;
   z-index: 3;
+}
+
+@media (max-width: 900px) {
+  .gradientBgContainer {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+  }
 }

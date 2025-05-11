@@ -6,7 +6,7 @@
   display: inline;
   white-space: pre-wrap;
   word-break: break-word;
-  font-family: inherit;
+  font-family: 'Space Mono', monospace;
   font-size: 1.5rem;
   font-weight: 200;
   line-height: 2;
@@ -34,3 +34,23 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 700px) {
+  .typewriterText {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .typewriterText {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .typewriterText {
+    font-size: 0.8rem;
+  }
+}
+
+

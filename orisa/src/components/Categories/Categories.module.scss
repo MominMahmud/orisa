@@ -6,20 +6,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  .backgroundGradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
 }
 
 .centeredText {
-  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 3rem;
-  font-weight: bold;
+  color: black;
+  font-size: 1rem;
   z-index: 2;
+  font-weight: 400;
+  font-size: 2rem;
+  text-shadow: 4px 4px 10px rgba(0,0,0,0.64);
+  text-wrap: nowrap;
   text-align: center;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Fustat', sans-serif;
   letter-spacing: 0.05em;
-  text-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  @media (max-width: 900px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
 }
