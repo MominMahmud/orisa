@@ -84,14 +84,39 @@
 @media (max-width: 700px) {
   .featuresGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   .featuresTitle {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 2.5rem;
   }
   .featureText {
     font-size: 1rem;
   }
 } 
+
+@media (max-width: 400px) {
+  .featuresTitle {
+    font-size: 1.5rem;
+  }
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    .featureItem {
+      width: 100%;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  .featureItem {
+    width: 100%;
+  }
+  .featureText {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
+}
 
