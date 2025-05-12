@@ -12,7 +12,6 @@
 .featuresTitle {
   font-size: 3.15rem;
   font-weight: 600;
-  text-shadow: 1px 1px 31px rgba(0,0,0,0.55);
   text-align: center;
   margin-bottom: 6rem;
   color: #111827;
@@ -20,7 +19,6 @@
 }
 
 .featuresGrid {
-  text-shadow: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;

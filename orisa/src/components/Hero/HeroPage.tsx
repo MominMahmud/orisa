@@ -2,7 +2,7 @@
 import styles from './HeroPage.module.scss';
 import logo from '../../assets/react.svg'; 
 
-const HeroPage = () => (
+const HeroPage = ({ gotoSection }: { gotoSection: (section: string) => void }) => (
   <div className={styles.heroBg}>
     <video
       className={styles.bgVideo}
@@ -14,8 +14,7 @@ const HeroPage = () => (
     />
     <header className={styles.header}>
       <div className={styles.logoWrap}>
-        <img src={logo} alt="Terra Labs Logo" className={styles.logo} />
-        <span>Terra Labs</span>
+        <span>Titan</span>
       </div>
       <a href="#" className={styles.login}>Login</a>
     </header>
@@ -23,6 +22,7 @@ const HeroPage = () => (
       <h1 className={styles.title}>
       Conversational Search for the Physical World
       </h1>
+      <button onClick={() => gotoSection('demo')} className={styles.btn}>Join Waitlist</button>
     </main>
   </div>
 );

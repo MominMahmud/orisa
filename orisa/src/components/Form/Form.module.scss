@@ -1,0 +1,90 @@
+$form-color: #ffffff;
+$bg-color: #f9f9fb;
+$primary: #1a3d53;
+$border: #e0e0e0;
+
+.formWrapper {
+  margin: 2rem auto;
+  font-family: 'Fustat', sans-serif;
+  max-width: 500px;
+  width: 90%; // Responsive width
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 10rem;
+  
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  button {
+    padding: 0.75rem;
+    background-color: $primary;
+    color: $form-color;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+
+    @media (max-width: 480px) {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.inputGroup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    position: absolute;
+    left: 0.75rem;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    background-color: $bg-color;
+    padding: 0 0.25rem;
+  }
+
+  .input {
+    padding: 1rem 0.75rem 0.5rem;
+    border: 1px solid $border;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: white;
+    transition: border-color 0.3s;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+
+    &:not(:placeholder-shown) + .label {
+      top: 0.2rem;
+      font-size: 0.75rem;
+      color: $primary;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.95rem;
+    }
+  }
+}

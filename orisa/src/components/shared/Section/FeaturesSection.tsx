@@ -2,19 +2,19 @@ import styles from './FeaturesSection.module.scss';
 
 const features = [
   {
-    icon: '/data_color.png',
+    icon: '/data.png',
     text: 'Rapid data aggregation and processing',
   },
   {
-    icon: '/model_color.png',
+    icon: '/model.png',
     text: 'State of the art deep learning models streamlining analysis',
   },
   {
-    icon: '/nlp_color.png',
+    icon: '/nlp.png',
     text: 'Intuitive natural language interface',
   },
   {
-    icon: '/privacy_color.png',
+    icon: '/privacy.png',
     text: 'Enterprise-ready with data privacy and governance controls',
   },
 ];
