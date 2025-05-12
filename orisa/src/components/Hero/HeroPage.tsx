@@ -1,6 +1,5 @@
 // orisa/src/components/HeroPage.tsx
 import styles from './HeroPage.module.scss';
-import logo from '../../assets/react.svg'; 
 
 const HeroPage = ({ gotoSection }: { gotoSection: (section: string) => void }) => (
   <div className={styles.heroBg}>
