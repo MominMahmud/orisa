@@ -1,9 +1,30 @@
-.demoVideo {
+
+.demoContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  
+  .demoText {
+    text-align: center;
+    font-family: 'Fustat', cursive;
+    font-size: 3rem;
+    font-weight: 600;
+    
+    color: black;
+  }
+
+video {
   object-fit: contain;
-  aspect-ratio: 16/9;
-  min-width: 100vw;
-  min-height: 100vh;
+  border-radius: 24px;
+  box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+  height: 70vh;
   z-index: 0;
-  background-color: black;
   pointer-events: none;
+}
+
+
 }

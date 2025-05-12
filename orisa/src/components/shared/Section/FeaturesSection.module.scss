@@ -10,7 +10,7 @@
 }
 
 .featuresTitle {
-  font-size: 3.15rem;
+  font-size: 2rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 6rem;
@@ -24,7 +24,9 @@
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  max-width: 1450px;
+  max-width: 1350px;
+  font-size: 0.75rem;
+
 }
 
 .featureItem {
@@ -32,10 +34,11 @@
   flex-direction: column;
   align-items: center;
   flex: 1 1 200px;
+  
 
   img {
-    width: 84px;
-    height: 84px;
+    width: 72px;
+    height: 72px;
   }
 }
 
@@ -50,7 +53,7 @@
 
 .featureText {
   margin-top: 2rem;
-  font-size: 1.25rem;
+  font-size: 0.8rem;
   color: #111827;
   text-align: center;
   text-wrap: balance;

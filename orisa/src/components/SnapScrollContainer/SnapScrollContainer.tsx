@@ -70,7 +70,6 @@ const SnapScrollContainer = forwardRef<
   const [isTouchActive, setIsTouchActive] = useState(false);
   const scrollTimeoutRef = useRef<number | null>(null);
 
-  // 🟢 Imperative handle for external control
   useImperativeHandle(ref, () => ({
     goToSection: (index: number, behavior: ScrollBehavior = "smooth") => {
       if (index >= 0 && index < childrenArray.length) {
@@ -272,8 +271,17 @@ const SnapScrollContainer = forwardRef<
       const deltaY = touchStartRef.current.y - touch.clientY;
       const delta = direction === "y" ? deltaY : deltaX;
       const timeElapsed = Date.now() - touchStartRef.current.time;
+
+      // 👇 Ignore very quick taps
+      if (timeElapsed < 100) {
+        touchStartRef.current = null;
+        return;
+      }
+
       const velocity = Math.abs(delta) / timeElapsed;
-      const threshold = velocity > 0.8 ? 30 : isMobile ? 40 : 50;
+      const cappedVelocity = Math.min(velocity, 1.5);
+      const threshold =
+        cappedVelocity > 1 ? (isMobile ? 50 : 60) : (isMobile ? 70 : 80);
 
       const isMainDirection =
         direction === "y"
@@ -281,10 +289,13 @@ const SnapScrollContainer = forwardRef<
           : Math.abs(deltaX) > Math.abs(deltaY) * 0.8;
 
       if (Math.abs(delta) > threshold && isMainDirection) {
-        const nextSection =
-          delta > 0
-            ? Math.min(currentSection + 1, childrenArray.length - 1)
-            : Math.max(currentSection - 1, 0);
+        let nextSection = currentSection;
+
+        if (delta > 0 && currentSection < childrenArray.length - 1) {
+          nextSection = currentSection + 1;
+        } else if (delta < 0 && currentSection > 0) {
+          nextSection = currentSection - 1;
+}
         if (nextSection !== currentSection) {
           handleSectionChange(nextSection);
         }

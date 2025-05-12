@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Form.module.scss';
 import { motion } from 'framer-motion';
 
-const FloatingLabelInput = ({ label, type = 'text' }: { label: string, type?: string }) => {
+
+const FloatingLabelInput = ({ label, type = 'text', setName }: { label: string, type?: string, setName?: (name: string) => void }) => {
   const [focused, setFocused] = useState(false);
   const [value, setValue] = useState('');
 
   const hasContent = focused || value.length > 0;
-
+  useEffect(() => setName && setName(value), [value, setName]);
   return (
     <div className={styles.inputGroup}>
       <motion.label
@@ -34,7 +35,15 @@ const FloatingLabelInput = ({ label, type = 'text' }: { label: string, type?: st
 };
 
 const Form = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState('');
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
   return (
+    !submitted ? 
     <motion.div
       className={styles.formWrapper}
       initial={{ opacity: 0, y: 50 }}
@@ -42,13 +51,22 @@ const Form = () => {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <h2 className={styles.title}>Sign Up for a Demo</h2>
-      <form className={styles.form}>
-        <FloatingLabelInput label="Name" />
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <FloatingLabelInput label="Name" setName={setName} />
         <FloatingLabelInput label="Organization" />
-        <FloatingLabelInput label="Email" type="email" />
-        <button type="submit">Send Message</button>
+        <FloatingLabelInput label="Email" type="email"  />
+        <button type="submit">Submit</button>
       </form>
-    </motion.div>
+      </motion.div>
+      :
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className={styles.textWrapper}
+      >
+        <h2 style={{textWrap: 'balance'}} className={styles.title}>Congratulations {name}! You are on the list!</h2>
+      </motion.div>
   );
 };
 

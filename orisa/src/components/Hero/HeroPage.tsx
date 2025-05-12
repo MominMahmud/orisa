@@ -13,9 +13,9 @@ const HeroPage = ({ gotoSection }: { gotoSection: (section: string) => void }) =
     />
     <header className={styles.header}>
       <div className={styles.logoWrap}>
-        <span>Titan</span>
+        <span>Titan AI</span>
       </div>
-      <a href="#" className={styles.login}>Login</a>
+      <a onClick={() => gotoSection('demo')} className={styles.login}>Sign Up</a>
     </header>
     <main className={styles.main}>
       <h1 className={styles.title}>

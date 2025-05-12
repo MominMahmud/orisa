@@ -14,6 +14,7 @@ function App() {
     ref.current?.goToSection(3);
   };
 
+
   return (
     <SnapScrollContainer direction="y" ref={ref}>
       <HeroPage gotoSection={handleGoToSecondSection} />
