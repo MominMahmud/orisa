@@ -6,7 +6,7 @@ import SnapScrollContainer from './components/SnapScrollContainer/SnapScrollCont
 import type { SnapScrollContainerHandle } from "./components/SnapScrollContainer/SnapScrollContainer";
 import Demo from './components/Demo/Demo';
 import Form from './components/Form/Form';
-
+import { Toaster } from 'react-hot-toast';
 function App() {
   const ref = useRef<SnapScrollContainerHandle>(null);
 
@@ -16,12 +16,16 @@ function App() {
 
 
   return (
+
+    <>
     <SnapScrollContainer direction="y" ref={ref}>
       <HeroPage gotoSection={handleGoToSecondSection} />
-      <Categories />
-      <Demo/>
-      <Form/>
-    </SnapScrollContainer>
+        <Categories />
+        <Demo />
+        <Form />
+      </SnapScrollContainer>
+      <Toaster />
+    </>
   );
 }
 

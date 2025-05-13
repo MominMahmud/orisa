@@ -6,10 +6,12 @@ const Demo = () => {
       <div className={styles.demoText}>How it works</div>
     <video
       className={styles.demoVideo}
-      src="/demo.mov"
+      src="/demo.mp4"
       autoPlay
+      controlsList="nodownload"
       loop
       muted
+      controls
       playsInline
     />
     </div>
